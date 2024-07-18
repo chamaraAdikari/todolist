@@ -1,0 +1,84 @@
+/* Import Google Fonts (Roboto and Montserrat) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+
+/* Apply font-family to the entire document */
+body {
+    font-family: 'Montserrat', sans-serif; /* Default font */
+}
+
+/* Heading fonts */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Helvetica', sans-serif; /* Montserrat for headings */
+}
+
+/* Customize other elements as needed */
+p {
+    font-size: 16px; /* Example of adjusting font size */
+}
+
+/* Additional custom styling */
+/* Add your custom CSS here for Bootstrap overrides or other styles */
+.card-body {
+    font-family: 'Helvetica', sans-serif;
+    padding: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.inner-part{
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.card-subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.card-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #777;
+}
+
+.badge {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.bg-success {
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.text-muted {
+    color: #aaa;
+}
+
+.text-danger {
+    color: #dc3545;
+}
+
+.btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
