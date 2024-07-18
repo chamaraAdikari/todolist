@@ -49,8 +49,12 @@ class AuthController extends BaseController
 
         session()->set($userData);
 
+        if($user['role'] == 'Admin'){
         // Redirect to dashboard or any desired page after successful login
         return redirect()->to('admin')->with('success', 'Logged in successfully.');
+        }else{
+            return redirect()->to('tasks')->with('success', 'Logged in successfully.');
+        }
     }
 
 

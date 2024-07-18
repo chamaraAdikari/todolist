@@ -10,34 +10,67 @@
         <button type="submit" class="btn btn-primary">Search</button>
     </div>
 </form>
-
+<style>
+    
+</style>
 <div class="row d-flex justify-content-center">
     <?php foreach ($projects as $project) { ?>
-        <div class="card text-center mx-1 mt-1 mb-1" style="width: 18rem;">
+        <div class="card text-center mx-1 mt-1 mb-1" style="width: 20rem;">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <div class="d-flex align-items-center ">
-                        <div class="me-2 col-4">
-                            <img src="https://via.placeholder.com/40" alt="UD" class="rounded-circle">
-                        </div>
-                        <div class="col-8">
-                            <h6 class="card-subtitle mb-0"><?= esc($project['title']) ?></h6>
-                        </div>
-                    </div>
+                <div class="d-flex align-items-center">
+    <div class="me-2 col-4">
+        <?php
+        $firstLetter = strtoupper($project['title'][0]); // Get the first letter and make it uppercase
+        $colorClass = '';
+
+        // Define an array of custom color classes
+        $colors = ['color1', 'color2', 'color3', 'color4', 'color5', 'color6'];
+
+        // Assign a color based on the first letter (you can change the logic as needed)
+        $colorIndex = ord($firstLetter) % count($colors);
+        $colorClass = $colors[$colorIndex];
+        ?>
+        <div class="circle <?= $colorClass ?>">
+            <span><?= $firstLetter ?></span>
+        </div>
+    </div>
+    <div class="col-8">
+        <h6 class="card-subtitle mb-0"><?= esc($project['title']) ?></h6>
+    </div>
+</div>
+
                 </div>
                 <hr>
                 <div class="d-flex justify-content-around">
-                    <div class="badge bg-success"> <span class="mt-1">ongoing</span> </div>
+                    <?php if($project['finished_task_count'] == $project['task_count'] && $project['task_count'] != 0) {?>
+                    <div class="badge bg-success"> 
+                        <span class="mt-1">Completed</span> 
+                    </div>
+                    <?php } else {?>
+                        <div class="badge bg-primary"> 
+                        <span class="mt-1">Ongoing</span> 
+                    </div>
+                    <?php } ?>
+                        
                     <p class="card-text text-muted mb-1">due date
-                        <?= esc($project['due_date']) ?>
+                        <b><?= esc($project['due_date']) ?></b>
                 </div>
                 <h5 class="card-title mt-3"><?= esc($project['company']) ?></h5>
                 <p class="card-text"><?= esc($project['description']) ?></p>
                 <hr>
                 <div class="row d-flex justify-content-around align-content-center mb-3 inner-part">
+                <?php if($project['finished_task_count'] == $project['task_count'] && $project['task_count'] != 0) {?>
                     <p class="card-text mt-1">Tasks <span
+                            class="text-success mx-1"><?= esc($project['finished_task_count']); ?></span>/<?= esc($project['task_count']); ?>
+                    </p>
+                    <?php } else{ ?>
+                        <p class="card-text mt-1">Tasks <span
                             class="text-danger mx-1"><?= esc($project['finished_task_count']); ?></span>/<?= esc($project['task_count']); ?>
                     </p>
+                    <?php }  ?>
+
+                    
                     <div>
                     <a href="/projects/view/<?= esc($project['project_id']) ?>" class="btn btn-outline-primary mt-3">View Project</a>
                         <!-- <a href="/tasks" class="btn btn-outline-primary mt-3">View Project</a> -->

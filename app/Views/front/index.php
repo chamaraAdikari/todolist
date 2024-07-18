@@ -14,10 +14,24 @@
 <?php foreach ($tasks as $task): ?>
     <?php if (session()->get('role') == 'Admin' || session()->get('user_id') == $task['users_user_id']) : ?>
     <div class="col-12 col-md-4 col-lg-2 d-flex justify-content-center mt-2 mb-2">
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 20rem;">
             <div class="card-body">
-                <h5 class="card-title"><?= esc($task['title']) ?></h5>
-                <p class="card-text"><?= esc($task['description']) ?></p>
+            <div class="row">
+                        <div class="col-2">
+                            <div alt="UD" style="width: 30px; height: 30px;" class="rounded-circle 
+                             <?php if ($task['importance_status'] == 'High') {
+                                 echo 'bg-danger';
+                             } else if ($task['importance_status'] == 'Medium') {
+                                 echo 'bg-warning';
+                             } else {
+                                 echo 'bg-success';
+                             } ?>"></div>
+                        </div>
+                        <div class="col-10">
+                            <h5 class="card-title"><?= esc($task['title']) ?></h5>
+                            <p class="card-text"><?= esc($task['description']) ?></p>
+                        </div>
+                    </div>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Importance Status:</strong> <?= esc($task['importance_status']) ?></li>

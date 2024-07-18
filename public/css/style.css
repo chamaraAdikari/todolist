@@ -82,3 +82,40 @@ p {
     background-color: #007bff;
     border-color: #007bff;
 }
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Define custom colors */
+.color1 {
+    background-color: #e74c3c; /* Red */
+}
+
+.color2 {
+    background-color: #8e44ad; /* Purple */
+}
+
+.color3 {
+    background-color: #3498db; /* Blue */
+}
+
+.color4 {
+    background-color: #1abc9c; /* Teal */
+}
+
+.color5 {
+    background-color: #f1c40f; /* Yellow */
+}
+
+.color6 {
+    background-color: #e67e22; /* Orange */
+}
