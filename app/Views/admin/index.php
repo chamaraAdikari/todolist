@@ -7,7 +7,7 @@
 <form action="/projects/search" method="GET" class="mb-4">
     <div class="input-group">
         <input type="text" class="form-control" placeholder="Search by title or company" name="keyword">
-        <button type="submit" class="btn btn-primary">Search</button>
+        <button type="submit" class="btn btn-primary"><i class="fa fa-magnifying-glass"></i> Search</button>
     </div>
 </form>
 <style>
@@ -72,12 +72,12 @@
 
                     
                     <div>
-                    <a href="/projects/view/<?= esc($project['project_id']) ?>" class="btn btn-outline-primary mt-3">View Project</a>
+                    <a href="/projects/view/<?= esc($project['project_id']) ?>" class="btn btn-outline-primary mt-3"><i class="fa fa-eye"></i> View Project</a>
                         <!-- <a href="/tasks" class="btn btn-outline-primary mt-3">View Project</a> -->
                         <button type="button" class="btn btn-outline-secondary mt-3" data-bs-toggle="modal"
-                            data-bs-target="#editProjectModal<?= $project['project_id'] ?>">Edit</button>
+                            data-bs-target="#editProjectModal<?= $project['project_id'] ?>"><i class="fa fa-pen-to-square"></i> Edit</button>
                         <a href="/projects/delete/<?= esc($project['project_id']) ?>" class="btn btn-outline-danger mt-3"
-                            onclick="return confirm('Are you sure you want to delete this project?');">Delete</a>
+                            onclick="return confirm('Are you sure you want to delete this project?');"><i class="fa fa-trash"></i> Delete</a>
                     </div>
                 </div>
             </div>
@@ -89,7 +89,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="editProjectModalLabel<?= $project['project_id'] ?>">Edit Project</h5>
+                        <h5 class="modal-title" id="editProjectModalLabel<?= $project['project_id'] ?>"> Edit Project</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -197,7 +197,7 @@
 <div class="fixed-bottom mb-4 me-4">
     <button type="button" class="btn btn-success btn-lg float-end" data-bs-toggle="modal"
         data-bs-target="#addProjectModal">
-        Add New Project
+        <i class="fa fa-plus"></i> Add New Project
     </button>
 </div>
 <?php endif; ?>

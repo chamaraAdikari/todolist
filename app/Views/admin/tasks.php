@@ -44,11 +44,11 @@
                 <div class="card-body">
                     <?php if (session()->get('role') == 'Admin'): ?>
                         <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                            data-bs-target="#editTaskModal<?= $task['task_id'] ?>">Edit</button>
+                            data-bs-target="#editTaskModal<?= $task['task_id'] ?>"><i class="fa fa-pen-to-square"></i> Edit</button>
                         <form action="/tasks/delete/<?= esc($task['task_id']) ?>" method="post" class="d-inline">
                             <input type="hidden" name="redirect" value="<?= current_url() ?>">
                             <button class="btn btn-danger" type="submit"
-                                onclick="return confirm('Are you sure you want to delete this task?')">Delete</button>
+                                onclick="return confirm('Are you sure you want to delete this task?')"><i class="fa fa-trash"></i> Delete</button>
                         </form>
                     <?php endif; ?>
                 </div>
@@ -214,7 +214,7 @@ endforeach;
 <div class="fixed-bottom mb-4 me-4">
     <button type="button" class="btn btn-success btn-lg float-end" data-bs-toggle="modal"
         data-bs-target="#addTaskModal">
-        Add New Task
+        <i class="fa fa-plus"></i> Add New Task
     </button>
 </div>
 
